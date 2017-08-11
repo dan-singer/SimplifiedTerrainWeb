@@ -14,18 +14,25 @@
     </script>
   </head>
   <body>
-    <div class="webgl-content">
-      <div id="gameContainer" style="width: 960px; height: 600px"></div>
+    
+    <div class="popup" id="loader">
+      <h1>Loading...</h1>
+    </div>
+
+    <div class="popup" id="unity">
+      <div class="webgl-content">
+        <div id="gameContainer" style="width: 960px; height: 600px"></div>
+      </div>
     </div>
 
     <div id="input_area">
-      <div class="upper-left">
+      <div class="middle-left">
         <input type="text" placeholder="Enter Heightmap URL"> 
       </div>
-      <div class="upper-right">
+      <div class="middle-right">
         <input type="text" placeholder="Enter Terrain Texture URL"> 
       </div>
-      <div class="upper-center">
+      <div class="middle-center">
         <button onclick="ValidateInputsThenApply();">Apply</button>
       </div>
     </div>
