@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Unity WebGL Player | TerrainGenSimplified</title>
+    <link rel="shortcut icon" href="TemplateData/favicon.ico">
+    <link rel="stylesheet" href="TemplateData/style.css">
+    <script src="TemplateData/UnityProgress.js"></script>  
+    <script src="Build/UnityLoader.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+      var gameInstance = UnityLoader.instantiate("gameContainer", "Build/SimplifiedTerrain.json", {onProgress: UnityProgress});
+    </script>
+  </head>
+  <body>
+    <div class="webgl-content">
+      <div id="gameContainer" style="width: 960px; height: 600px"></div>
+    </div>
+
+    <div id="input_area">
+      <div class="upper-left">
+        <input type="text" placeholder="Enter Heightmap URL"> 
+      </div>
+      <div class="upper-right">
+        <input type="text" placeholder="Enter Terrain Texture URL"> 
+      </div>
+      <div class="upper-center">
+        <button onclick="ValidateInputsThenApply();">Apply</button>
+      </div>
+    </div>
+
+  </body>
+</html>
