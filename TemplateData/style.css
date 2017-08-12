@@ -134,6 +134,7 @@ input[type="text"]:focus{
     background-image: url("../images/X.png");
     z-index: 1;
     background-size: contain;
+    transform: translate(100%, -100%);
 
 }
 
