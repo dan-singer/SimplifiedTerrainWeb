@@ -16,7 +16,7 @@ function HandleSceneLoaded(){
 
     document.onkeydown = function(event){
         justPressedAlt = true;
-        setTimeout(function(){justPressedAlt = false;}, 1000);
+        setTimeout(function(){justPressedAlt = false;}, 100);
     }
 
 }
@@ -28,7 +28,7 @@ function HandleEscapePressedFromWebGL(){
 function HandleReturnPressedFromWebGL(){
     console.log("Pressed return");
     justPressedReturn = true;
-    setTimeout(function(){justPressedReturn = false;}, 1000);
+    setTimeout(function(){justPressedReturn = false;}, 100);
 }
 
 
@@ -42,8 +42,8 @@ function ResetAndHidePlayer(sendResetMessage){
 }
 
 
-document.onclick = function(event){
-
+document.onmousedown = function(event){
+    
     if (viewingGL){
         if (event.target.nodeName != "CANVAS"){
             document.getElementById("unity").style.display = "none";            
@@ -63,6 +63,9 @@ document.onclick = function(event){
 
 function ValidateInputsThenApply()
 {
+    //Prevent phantom clicks by hitting space.
+    if (viewingGL)
+        return;
     var foundErr = false;
     var inputs = document.getElementsByTagName("INPUT");
     //Validate
